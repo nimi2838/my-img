@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>입생로랑 리디자인</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+<link rel="stylesheet" href="index.css">
+<script src="index.js"></script>
+</head>
+<body>
+    
+
+    
+
+<div class="top-bar con-min-width">
+  <div class="con height-100p flex">
+    <div class="flex-1-0-0 flex flex-ai-c">
+      <ul class="flex menu-1">
+        <li>
+          <a href="#" class="btn-type-1 btn-shop height-100p flex flex-ai-c">
+            <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNTMuNzYgMjEwLjM3Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPkxvY2F0aW9uLVdoaXRlPC90aXRsZT48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNTAuMTQsMTQ0LjgxYy00Mi4yNywwLTc3LDMyLTc3LDcxLjU2LDAsLjg0LjA5LDMuNjIuMjksOC43NWE1My40Nyw1My40NywwLDAsMCwxLjYzLDkuNTJjMS4zNCw1LDEsNC4wOSw4LjIsMjEuMDgsMTEuNDUsMjYsMzEsNTYuNjMsNjAuODMsOTEuNzJsNi42LDcuNzUsNi4yOS04YzM2LjcxLTQ2LjYxLDY1LjQyLTkxLDY5LTExOWE3Ny4zOSw3Ny4zOSwwLDAsMCwuOTEtMTEuODFDMzI3LjE5LDE3Ni44NiwyOTIuNDcsMTQ0LjgxLDI1MC4xNCwxNDQuODFabTU5LjMzLDgxYy0yLjg2LDIyLjMyLTI3Ljg1LDYyLjEtNTkuMjksMTAyLjkzLTI1LjEzLTMwLjU3LTQxLjc0LTU3LjE5LTUxLjY0LTc5LjY3LTYuNjQtMTUuNTgtNi4zNy0xNC45Mi03LjQtMTguNzZBMzcuNjIsMzcuNjIsMCwwLDEsMTkwLDIyNGMtLjE1LTQuMy0uMjQtNy4xNS0uMjQtNy42NywwLTMwLjA1LDI3LTU0Ljg5LDYwLjM1LTU0Ljg5czYwLjMxLDI0Ljg1LDYwLjA3LDU0LjgyQTYyLDYyLDAsMCwxLDMwOS40NywyMjUuODRaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTczLjEyIC0xNDQuODEpIi8+PC9zdmc+" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="#" class="btn-type-1 btn-member height-100p flex flex-ai-c">
+            <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDUuNTYgMjE5LjMzIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPk15QWNjb3VudC1XaGl0ZTwvdGl0bGU+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjAyLjg5LDIwNC4yMmE0Ny4yMiw0Ny4yMiwwLDEsMSw0OS44Miw0Ny4xNWMtLjksMC0xLjgsMC0yLjcsMHMtMS42OSwwLTIuNTMsMGE0Ny4yMyw0Ny4yMywwLDAsMS00NC41OS00Ny4xNU0yODUsMjU3Ljc2YTYzLjg5LDYzLjg5LDAsMSwwLTY5Ljc3LS4wNWMtMzkuNjgsMTUtNjgsNTUuMDctNjgsMTAyaDE2LjY3YzAtNDkuODIsMzcuMjgtOTAuMTgsODMuNTYtOTEuNjMuODgsMCwxLjc3LjA3LDIuNjcuMDdzMS42OSwwLDIuNTMtLjA2YzQ2LjIzLDEuNDgsODMuNDYsNDEuODMsODMuNDYsOTEuNjJoMTYuNjdjMC00Ni44NC0yOC4yMi04Ni44Mi02Ny44Mi0xMDEuOTEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDcuMjIgLTE0MC4zMykiLz48L3N2Zz4=" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="#" class="btn-type-1 btn-cart height-100p flex flex-ai-c">
+            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDIyMi4yIDIxOS42IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyMjIuMiAyMTkuNjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtkaXNwbGF5Om5vbmU7fQoJLnN0MXtkaXNwbGF5OmlubGluZTt9Cgkuc3Qye2Rpc3BsYXk6aW5saW5lO2ZpbGw6I0ZGRkZGRjt9Cgkuc3Qze2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU+CjxnIGlkPSJMYXllcl8yIiBjbGFzcz0ic3QwIj4KCTxyZWN0IHg9Ii0zIiB5PSItOS4zIiBjbGFzcz0ic3QxIiB3aWR0aD0iMjI4LjgiIGhlaWdodD0iMjI4LjgiLz4KPC9nPgo8ZyBpZD0iTGF5ZXJfMSI+Cgk8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTM5IC0xNDEpIj4KCQk8ZyBpZD0iYSIgY2xhc3M9InN0MCI+CgkJCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMzksMTQxaDIyMi4ydjIxOS42SDEzOVYxNDF6Ii8+CgkJPC9nPgoJPC9nPgoJPHRpdGxlPkJhZ1doaXRlPC90aXRsZT4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik0yMDAuNCwyMDQuMWMtMC40LDAuMS0wLjgsMC4xLTEuMiwwLjFoLTE3NWMtNC44LDAtOC44LTMuOS04LjgtOC44YzAtMC40LDAtMC44LDAuMS0xLjJMMzAuOCw4NC45CgkJCWMwLjYtNC4zLDQuMy03LjUsOC43LTcuNUg1M1Y5OGgxNlY3Ny4zaDg0Vjk4aDE3Vjc3LjNoMTMuOGM0LjQsMCw4LjEsMy4yLDguNyw3LjVsMTUuMywxMDkuNEMyMDguNSwxOTksMjA1LjEsMjAzLjUsMjAwLjQsMjA0LjEKCQkJIE02OS43LDYzLjljMC0yNi4zLDE4LjktNDcuMiw0MS43LTQ3LjJzNDEuNywyMSw0MS43LDQ3LjJWNjRMNjkuNyw2My45TDY5LjcsNjMuOSBNMjIyLDE5NC4yTDIwNi40LDgzLjEKCQkJYy0xLjUtMTEtMTAuOS0xOS4xLTIyLTE5LjFoLTE0Ljh2LTAuMWMwLTM1LjEtMjUuOS02My45LTU4LjMtNjMuOVM1MywyOC44LDUzLDYzLjlWNjRIMzcuOGMtMTEuMSwwLTIwLjUsOC4yLTIyLDE5LjFMMC4yLDE5NC4yCgkJCWMtMC4xLDEtMC4yLDItMC4yLDMuMWMwLDEyLjMsOS45LDIyLjIsMjIuMiwyMi4ybDAsMEgyMDBjMSwwLDIuMS0wLjEsMy4xLTAuMkMyMTUuMiwyMTcuNiwyMjMuNywyMDYuNCwyMjIsMTk0LjIKCQkJQzIyMiwxOTQuMywyMjIsMTk0LjMsMjIyLDE5NC4yIi8+Cgk8L2c+CjwvZz4KPC9zdmc+Cg==" alt="">
+          </a>
+        </li>
+      </ul>
+    </div>
+    <a href="#" class="logo flex flex-ai-c"><img src="https://nimi2838.github.io/my-img/hn/logo.png" alt=""></a>
+    <div class="flex-1-0-0 flex flex-ai-c flex-jc-e">
+      <div class="search-form form flex flex-ai-c">
+        <input type="text" placeholder="검색어를 입력해주세요.">
+        <a href="#" class="btn-type-1 btn-search">
+          <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTg1LjkzIDE4NS45MyI+PGRlZnM+PHN0eWxlPi5jbHMtMSwuY2xzLTN7ZmlsbDojZmZmO30uY2xzLTF7ZmlsbC1ydWxlOmV2ZW5vZGQ7fS5jbHMtMnttYXNrOnVybCgjbWFzayk7fTwvc3R5bGU+PG1hc2sgaWQ9Im1hc2siIHg9IjAiIHk9IjAiIHdpZHRoPSIxODUuOTMiIGhlaWdodD0iMTg1LjkzIiBtYXNrVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTU3LjA0IC0xNTcuMDQpIj48ZyBpZD0ic2VhcmNoLWIiPjxwb2x5Z29uIGlkPSJzZWFyY2gtYSIgY2xhc3M9ImNscy0xIiBwb2ludHM9IjE1Ny4wNCAxNTcuMDQgMzQyLjk2IDE1Ny4wNCAzNDIuOTYgMzQyLjk2IDE1Ny4wNCAzNDIuOTYgMTU3LjA0IDE1Ny4wNCIvPjwvZz48L2c+PC9tYXNrPjwvZGVmcz48dGl0bGU+U2VhcmNoLVdoaXRlPC90aXRsZT48ZyBjbGFzcz0iY2xzLTIiPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTIyNC44MiwyNzkuMjZhNTQuNDUsNTQuNDUsMCwxLDEsNTQuNDQtNTQuNDVBNTQuNDUsNTQuNDUsMCwwLDEsMjI0LjgyLDI3OS4yNlptNTQuNzEtOS4xNmE2LjU5LDYuNTksMCwwLDAtMi44NC0xLjY4LDY3Ljc5LDY3Ljc5LDAsMSwwLTguMjcsOC4yNyw2LjU5LDYuNTksMCwwLDAsMS42OCwyLjg0TDMzMS41OCwzNDFhNi42Nyw2LjY3LDAsMCwwLDkuNDMtOS40M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNTcuMDQgLTE1Ny4wNCkiLz48L2c+PC9zdmc+" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-bar con-min-width">
+  <div class="con height-100p">
+    <nav class="menu-box-1 height-100p">
+      <ul class="height-100p flex">
+        <li class="flex-1-0-0">
+          <a href="#" class="flex flex-ai-c flex-jc-c height-100p">WHAT'S NEW</a>
+          <ul>
+            <li><a href="#" class="flex flex-jc-c">NEW 새틴 크러쉬 아이새도우</a></li>
+            <li><a href="#" class="flex flex-jc-c">NEW 일리싯누드</a></li>
+            <li><a href="#" class="flex flex-jc-c">NEW 엉크르 드 뽀 쿠션</a></li>
+            <li><a href="#" class="flex flex-jc-c">밀크티 컬렉션</a></li>
+            <li><a href="#" class="flex flex-jc-c">NEW 벨벳 틴트</a></li>
+            <li><a href="#" class="flex flex-jc-c">새로운 스킨케어, 퓨어샷</a></li>
+          </ul>
+        </li>
+        <li class="flex-1-0-0">
+          <a href="#" class="flex flex-ai-c flex-jc-c height-100p">베스트셀러</a>
+          <ul>
+            <li><a href="#" class="flex flex-jc-c">NEW 엉크르 드 뽀 쿠션</a></li>
+            <li><a href="#" class="flex flex-jc-c">따뚜아쥬 꾸뛰르 벨벳 틴트</a></li>
+            <li><a href="#" class="flex flex-jc-c">베르니 아 레브르 워터 스테인</a></li>
+            <li><a href="#" class="flex flex-jc-c">루쥬 볼륍떼 샤인</a></li>
+            <li><a href="#" class="flex flex-jc-c">리브르 오 드 빠르펭</a></li>
+            <li><a href="#" class="flex flex-jc-c">몽 파리 오 드 빠르펭</a></li>
+          </ul>
+        </li>
+        <li class="flex-1-0-0">
+          <a href="#" class="flex flex-ai-c flex-jc-c height-100p">메이크업</a>
+          <ul>
+            <li>
+              <a href="#" class="flex flex-jc-c">베이스</a>
+              <ul>
+                <li><a href="#" class="flex flex-jc-c">베이스/프라이머</a></li>
+                <li><a href="#" class="flex flex-jc-c">쿠션</a></li>
+                <li><a href="#" class="flex flex-jc-c">파운데이션</a></li>
+                <li><a href="#" class="flex flex-jc-c">컨실러</a></li>
+                <li><a href="#" class="flex flex-jc-c">컴팩트/파우더</a></li>
+                <li><a href="#" class="flex flex-jc-c">블러셔/브론저</a></li>
+                <li><a href="#" class="flex flex-jc-c">하이라이터</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="flex flex-jc-c">립</a>
+              <ul>
+                <li><a href="#" class="flex flex-jc-c">립스틱</a></li>
+                <li><a href="#" class="flex flex-jc-c">립틴트</a></li>
+                <li><a href="#" class="flex flex-jc-c">립펜슬</a></li>
+                <li><a href="#" class="flex flex-jc-c">가상 메이크업</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="flex flex-jc-c">아이</a>
+              <ul>
+                <li><a href="#" class="flex flex-jc-c">마스카라</a></li>
+                <li><a href="#" class="flex flex-jc-c">아이섀도</a></li>
+                <li><a href="#" class="flex flex-jc-c">아이라이너</a></li>
+                <li><a href="#" class="flex flex-jc-c">아이브로우</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="flex flex-jc-c">악세사리</a>
+              <ul>
+                <li><a href="#" class="flex flex-jc-c">브러쉬/어플리케이터</a></li>
+                <li><a href="#" class="flex flex-jc-c">기타 악세사리</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="flex-1-0-0">
+          <a href="#" class="flex flex-ai-c flex-jc-c height-100p">스킨케어</a>
+          <ul>
+            <li>
+              <a href="#" class="flex flex-jc-c">제품 유형별</a>
+              <ul>
+                <li><a href="#" class="flex flex-jc-c">클렌저/토너</a></li>
+                <li><a href="#" class="flex flex-jc-c">세럼</a></li>
+                <li><a href="#" class="flex flex-jc-c">에멀전/크림</a></li>
+                <li><a href="#" class="flex flex-jc-c">아이/립 케어</a></li>
+                <li><a href="#" class="flex flex-jc-c">UV 프로텍션/베이스</a></li>
+                <li><a href="#" class="flex flex-jc-c">스페셜 케어</a></li>
+                <li><a href="#" class="flex flex-jc-c">메이크업 세팅 스프레이</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="flex flex-jc-c">피부 고민별</a>
+              <ul>
+                <li><a href="#" class="flex flex-jc-c">보습</a></li>
+                <li><a href="#" class="flex flex-jc-c">피부보호&자외선차단</a></li>
+                <li><a href="#" class="flex flex-jc-c">화이트닝 & 광채</a></li>
+                <li><a href="#" class="flex flex-jc-c">주름 & 탄력 개선</a></li>
+                <li><a href="#" class="flex flex-jc-c">프리미엄 스킨케어</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="flex flex-jc-c">제품 라인별</a>
+              <ul>
+                <li><a href="#" class="flex flex-jc-c">탑 시크릿</a></li>
+                <li><a href="#" class="flex flex-jc-c">블랑 쀠르 꾸뛰르</a></li>
+                <li><a href="#" class="flex flex-jc-c">오 후즈</a></li>
+                <li><a href="#" class="flex flex-jc-c">퓨어샷</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="flex-1-0-0">
+          <a href="#" class="flex flex-ai-c flex-jc-c height-100p">향수</a>
+          <ul>
+            <li>
+              <a href="#" class="flex flex-jc-c">여성 향수</a>
+              <ul>
+                <li><a href="#" class="flex flex-jc-c">몽 파리</a></li>
+                <li><a href="#" class="flex flex-jc-c">블랙오피움</a></li>
+                <li><a href="#" class="flex flex-jc-c">리브르</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="flex flex-jc-c">남성 향수</a>
+              <ul>
+                <li><a href="#" class="flex flex-jc-c">롬므</a></li>
+                <li><a href="#" class="flex flex-jc-c">라 뉘 드 롬므</a></li>
+                <li><a href="#" class="flex flex-jc-c">와이</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+<div class="slider-box-1">
+  <div class="slick">
+    <div class="item">
+      <button>자세히 보기</button>
+      <div class="bg" style="background-image:url(https://nimi2838.github.io/my-img/hn/rbn_1_1_1.jpg);"></div>
+    </div>
+    <div class="item">
+      <button>자세히 보기</button>
+      <div class="bg" style="background-image:url(https://nimi2838.github.io/my-img/hn/rbn_1_2_1.jpg);"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="page-1 con">
+  <p class="text-align-center">
+    입생로랑 추천 아이템
+  </p>
+  <div class="slider-box-2">
+    <div class="slick">
+      <div class="item">
+        <div class="img-box" style="background-image:url(https://nimi2838.github.io/my-img/hn/face_1.jpg);"></div>
+        <div class="text-box text-align-center">
+          <div class="prod-name">제품명</div>
+          <div class="prod-des">촉촉하고 빛을 머금은 듯 은은한 글로우</div>
+          <div class="prod-price">79,000</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-box" style="background-image:url(https://nimi2838.github.io/my-img/hn/face_2-1.jpg);"></div>
+        <div class="text-box text-align-center">
+          <div class="prod-name">제품명</div>
+          <div class="prod-des">촉촉하고 빛을 머금은 듯 은은한 글로우</div>
+          <div class="prod-price">79,000</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-box" style="background-image:url(https://nimi2838.github.io/my-img/hn/face_3.jpg);"></div>
+        <div class="text-box text-align-center">
+          <div class="prod-name">제품명</div>
+          <div class="prod-des">촉촉하고 빛을 머금은 듯 은은한 글로우</div>
+          <div class="prod-price">79,000</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-box" style="background-image:url(https://nimi2838.github.io/my-img/hn/lip_1.jpg);"></div>
+        <div class="text-box text-align-center">
+          <div class="prod-name">제품명</div>
+          <div class="prod-des">촉촉하고 빛을 머금은 듯 은은한 글로우</div>
+          <div class="prod-price">79,000</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-box" style="background-image:url(https://nimi2838.github.io/my-img/hn/lip_2.png);"></div>
+        <div class="text-box text-align-center">
+          <div class="prod-name">제품명</div>
+          <div class="prod-des">촉촉하고 빛을 머금은 듯 은은한 글로우</div>
+          <div class="prod-price">79,000</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-box" style="background-image:url(https://nimi2838.github.io/my-img/hn/lip_3.jpg);"></div>
+        <div class="text-box text-align-center">
+          <div class="prod-name">제품명</div>
+          <div class="prod-des">촉촉하고 빛을 머금은 듯 은은한 글로우</div>
+          <div class="prod-price">79,000</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="img-box" style="background-image:url(https://nimi2838.github.io/my-img/hn/pup_1.jpg);"></div>
+        <div class="text-box text-align-center">
+          <div class="prod-name">제품명</div>
+          <div class="prod-des">촉촉하고 빛을 머금은 듯 은은한 글로우</div>
+          <div class="prod-price">79,000</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-box" style="background-image:url(https://nimi2838.github.io/my-img/hn/pup_2.jpg);"></div>
+        <div class="text-box text-align-center">
+          <div class="prod-name">제품명</div>
+          <div class="prod-des">촉촉하고 빛을 머금은 듯 은은한 글로우</div>
+          <div class="prod-price">79,000</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-box" style="background-image:url(https://nimi2838.github.io/my-img/hn/pup_3.jpg);"></div>
+        <div class="text-box text-align-center">
+          <div class="prod-name">제품명</div>
+          <div class="prod-des">촉촉하고 빛을 머금은 듯 은은한 글로우</div>
+          <div class="prod-price">79,000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="banner-box">
+  <img src="https://nimi2838.github.io/my-img/hn/banner_2_2.jpg" alt="">
+</div>
+
+<div class="video-box flex flex-jc-c">
+  <iframe width="1920" height="1080" src="https://www.youtube.com/embed/5qpkQ_cMx6I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+<div class="banner-box-2">
+  <a href="#"><img src="https://nimi2838.github.io/my-img/hn/bn_5_10_1.jpg" alt=""></a>
+</div>
+
+
+
+<div class="mini-banner">
+  <div class="mini-ban mini-1">
+    <a href="#"><img src="https://www.yslbeautykr.com/dw/image/v2/AAWH_PRD/on/demandware.static/-/Sites-ysl-kr-Library/ko_KR/dw1948915b/homepage/explorer_bycategory/bestseller/YSL_engraving_Category.jpg?sw=305&sh=264&sm=cut&q=70" alt=""></a>
+    <div class="text text-align-center">
+      이니셜 각인 서비스
+    </div>
+  </div>
+  <div class="mini-ban mini-2">
+    <a href="#"><img src="https://nimi2838.github.io/my-img/hn/banner3_1.jpg" alt=""></a>
+    <div class="text text-align-center">
+      가상 메이크업 서비스
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="footer flex flex-jc-c">
+  <div class="footer-box-1">
+    <div class="mini-logo">
+      <img src="https://nimi2838.github.io/my-img/hn/footer_logo.png" alt="">
+    </div>
+    <div class="text-box">
+     <span class="span-1">입생로랑 뷰티 고객 케어 센터 ( CONSUMER CARE CENTER )</span> <br>
+      구매/배송/사이트 이용 문의 080-835-0089 <br>
+      제품문의 080-347-0089 <br>
+      상담 시간: 월~금 9:30~17:30 <br>
+      (토/일/공휴일 휴무) <br>
+      *점심시간: 12:30~13:30 <br>
+       <span class="span-2">*이메일 문의를 이용하시면 보다 신속하게 답변 받으실 수 있습니다. </span> <br>
+      <p><a href="#"><span class="span-2">이메일 문의</span></a></p>
+    </div>
+  </div>
+  <div class="footer-box-2">
+    <div class="icon"></div>
+    <div class="list">
+      <ul>
+        <li><a href="#">자주 묻는 질문</a></li>
+        <li><a href="#">주문 현황 확인</a></li>
+        <li><a href="#">비회원 주문 확인</a></li>
+        <li><a href="#">배송/반품/교환 안내</a></li>
+        <li><a href="#">주문/결제 안내</a></li>
+        <li><a href="#">이용 약관</a></li>
+        <li><a href="#"><span class="span-1">개인정보처리방침</span></a></li>
+        <li><a href="#">사이트맵</a></li>
+      </ul>
+      
+    </div>
+  </div>
+  
+  
+  <div class="footer-box-3">
+    <div class="text-box">
+      사업자명: 엘오케이(유) 대표: 크리스티앙 마르코스 아르나이 <br>
+사업자 등록번호: 220-81-73483 (사업자정보 확인) <br>
+주소: 서울특별시 강남구 영동대로 517 아셈타워 31층 <br>
+통신판매업신고: 2012-서울강남-01663 <br>
+개인정보 관리 책임자: 안선지 | 고객케어센터: 080-835-0089 <br>
+© 2020 Yves Saint Laurent Cosmetics. All rights reserved.
+    </div>
+    <div class="text-box_1">
+      <img src="https://nimi2838.github.io/my-img/hn/escrow_banner.png" alt="저작권">
+    </div>
+  </div>
+  
+  
+
+</div>
+
+</body>
+</html>

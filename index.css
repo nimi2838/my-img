@@ -1,0 +1,461 @@
+/* 폰트 적용 */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+html {
+  font-family: 'Nanum Gothic',sans-serif!important;
+}
+
+/* 노말라이즈 */
+body, ul, li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+  
+}
+
+/* 라이브러리 */
+.con {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.height-100p {
+  height:100%;
+}
+
+.flex {
+  display:flex;
+}
+
+.flex-1-0-0 {
+  flex:1 0 0;
+}
+
+.flex-ai-c {
+  align-items:center;
+}
+
+.flex-ai-e {
+  align-item:flex-start;
+}
+
+.flex-jc-e {
+  justify-content:flex-end;
+}
+
+.flex-jc-c {
+  justify-content:center;
+}
+
+.border-blue {
+  border: 2px solid blue;
+}
+
+/* 커스텀 */
+.con-min-width {
+  min-width:1200px;
+}
+
+.con {
+  width:1200px;
+}
+
+/* 탑바 시작 */
+.top-bar {
+  height:100px;
+  background-color:black;
+  color:white;
+}
+
+/* 탑바 - 공통 */
+.top-bar .btn-type-1 {
+  width:20px;
+}
+
+.top-bar .btn-type-1 > img {
+  display:block;
+  width:100%;
+}
+
+/* 이 아이콘이 다른 아이콘들 보다 작아서 너비를 키워서 맞춘다. */
+.top-bar .btn-type-1.btn-member {
+  width:23px;
+}
+
+/* 이 아이콘이 다른 아이콘들 보다 작아서 너비를 키워서 맞춘다. */
+.top-bar .btn-type-1.btn-cart {
+  width:26px;
+}
+
+/* 메뉴1 */
+.top-bar .menu-1 > li > a {
+  padding:10px;
+}
+
+.top-bar .menu-1 > li:first-child > a {
+  padding-left:0;
+}
+
+/* 탑바 검색폼 */
+.top-bar .search-form > input {
+  width:0;
+  padding:0;
+  margin:0;
+  outline:0;
+  border:0;
+  border-bottom:1px solid transparent;
+  transition:width .3s, border-bottom-color .3s;
+  background-color:transparent;
+  color:white;
+  margin-right:10px;
+  padding:10px;
+  display:block;
+  box-sizing:border-box;
+  font-weight:bold;
+}
+
+.top-bar .search-form:hover > input {
+  width:170px;
+  border-bottom-color: white;
+}
+
+/* 메뉴박스 */
+.menu-bar {
+  height:50px;
+  background-color:black;
+  color:white;
+}
+
+.menu-bar .menu-box-1 {
+  margin-left:50px;
+  margin-right:50px;
+}
+
+.menu-bar .menu-box-1 > ul > li > a {
+  font-weight:bold;
+  border-radius:3px 3px 0 0;
+  font-size:18px;
+}
+
+.menu-bar .menu-box-1 > ul{
+    position:relative;
+}
+
+
+.menu-bar .menu-box-1 > ul > li:hover > a {
+  background-color:white;
+  color:black;
+}
+
+
+
+
+/* 2차 메뉴 유튭 */
+.menu-bar .menu-box-1 > ul>li> .th3,.th2 {
+  border:2px solid red;
+  position:absolute;
+/*   left:0; */
+  display:none;
+}
+
+
+.menu-bar .menu-box-1 > ul > li:hover > a::after {
+  width:100%;
+}
+
+.menu-bar .menu-box-1 > ul > li > ul {
+  height: 230px;
+  color: #2d2d2d;
+  position:absolute;
+  border: 2px solid black;
+  border-top: 0;
+  left:-1px;
+  width:100%;
+  display:none;
+  z-index:100;
+  background-color:white;
+}
+
+
+
+.menu-bar .menu-box-1 > ul > li:hover > ul {
+  display:flex;
+  justify-content:center;
+}
+
+.menu-bar .menu-box-1 > ul > li > ul > li > a {
+  margin: 10px 8px 0;
+  font-weight: 550;
+  display: block;
+  text-align: center;
+}
+
+.menu-bar .menu-box-1 > ul ul ul > li > a {
+  margin: 5px 10px 0;
+}
+
+
+
+
+/* 슬라이더 */
+
+.slider-box-1 {
+  width: 100%;
+  height:400px;
+  margin:0 auto;
+  position:relative;
+}
+/* 
+.slider-box-1 > .arrows > .btn-right {
+  position: absolute;
+  z-index:99;
+  top: 50%;
+  left: 93%;
+  cursor:pointer;
+}
+
+.slider-box-1 > .arrows > .btn-left {
+  position: absolute;
+  z-index:99;
+  top: 50%;
+  left: 2%;
+  cursor:pointer;
+} */
+
+/* .slider-box-1 > .arrows > svg {
+  width: 100px;
+  height: 100px;
+} */
+
+
+.slider-box-1 > .slick .item {
+  height:400px;
+  position:relative;
+  overflow:hidden;
+  outline:0;
+}
+
+.slider-box-1 > .slick .item .bg {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-position:center;
+  background-size:cover;
+}
+
+.slider-box-1 .slick-dots {
+  bottom:10px;
+  z-index:50;
+}
+
+.slider-box-1 .item button {
+  position:absolute;
+  top:calc(50% + 50px);
+  left:calc(60% + 15px);
+  z-index:10;
+  background: black;
+  color:white;
+  padding: 10px 40px;
+  border: 1px solid #9f9f9f;
+}
+
+.slider-box-1 .item button:hover {
+  background: white;
+  color: black;
+  border: 1px solid #9f9f9f;
+}
+
+
+.text-align-center {
+  text-align:center;
+}
+
+
+.page-1 > p {  
+  font-size: 40px;
+}
+
+.page-1 {
+  margin-bottom: 50px;
+}
+
+.slider-box-2 {
+  margin-left:50px;
+  margin-right:50px;
+}
+
+.slider-box-2 .slick {
+  padding-top:50px;
+}
+
+.slider-box-2 .slick .item {
+  outline:0;
+}
+
+.slider-box-2 .slick .item > .img-box {
+  width:250px;
+  margin-left:auto;
+  margin-right:auto;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+
+.slider-box-2 .slick .item > .img-box::after {
+  content:"";
+  display:block;
+  padding-top:100%;
+}
+
+
+
+.slider-box-2 .slick-dots {
+  bottom:auto;
+  top:0;
+}
+
+.slider-box-2 .slick-dots li {
+  width:auto;
+  height:auto;
+  border-bottom:1px solid #afafaf;
+  margin:0;
+  width:150px;
+  padding-bottom: 8px;
+}
+
+.slider-box-2 .slick-dots li.slick-active {
+  border-bottom-color:black;
+}
+
+
+
+.banner-box > img {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.video-box {
+  margin-bottom: 50px;
+}
+
+
+
+/* 미니 배너 */
+
+.mini-banner {
+  position: relative;
+  margin-bottom: 100px;
+  height: 460px;
+}
+
+.mini-ban {
+  width: 400px;
+  position: relative;
+}
+
+.mini-ban > a > img {
+  width: 440px;
+  height: 450px;
+}
+
+.mini-ban > .text {
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.mini-1 {
+  position: absolute;
+  top: 0;
+  left: 30%; 
+}
+
+.mini-2 {
+  position: absolute;
+  top: 30px;
+  left: 48%; 
+} 
+
+.banner-box-2 {
+  margin-bottom: 50px;
+}
+
+.banner-box-2 > a > img {
+  width: 100%;
+}
+
+
+/* 텍스트 박스 */
+
+.footer {
+  background: black;
+  padding: 50px;
+  font-size: 14px;
+  color: #999999;
+}
+
+.footer > .footer-box-1 {
+  margin-right: 50px;
+}
+
+.footer > .footer-box-1 > .mini-logo {
+  margin-bottom: 40px;
+  width:100px;
+  height:100px;
+}
+
+.footer > .footer-box-1 > .mini-logo > img {
+  width: 100%;
+  height : 100%;
+}
+
+.footer > .footer-box-1 > .text-box {
+  line-height: 20px;
+}
+
+.footer > .footer-box-1 > .text-box > p:hover > a {
+  color: white;
+}
+
+.footer > .footer-box-1 .span-2 {
+  text-decoration: underline;
+}
+
+
+.footer > .footer-box-1 .span-1 {
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+}
+
+.footer > .footer-box-2 .span-1 {
+  font-size: 17px;
+  color: white;
+  font-weight: 600;
+}
+
+.footer > .footer-box-2 > .icon {
+  height: 100px;
+  margin-bottom: 35px;
+}
+
+.footer > .footer-box-2 > .list > ul > li:hover > a {
+  color: white;
+}
+
+.footer >.footer-box-3 {
+    margin-left: 250px;
+}
+
+.footer >.footer-box-3 > .text-box {
+  font-size: 11px;
+  margin-top: 128px;
+  margin-bottom: 20px;
+  line-height: 20px;
+}
